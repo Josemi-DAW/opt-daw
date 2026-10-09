@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class IdiomaController {
 
     @GetMapping("/lenguaje")
-    public String lenguaje(@RequestParam(name = "idioma", required = false) String leng){
+    public String lenguaje(@RequestParam(name = "idioma", required = false) String leng) {
         if (leng == null || leng.isEmpty()) {
             return "redirect:/english.html";
         }
-
+        /*
         if (leng.equalsIgnoreCase("spanish")){
             return "redirect:/spanish.html";
         } else if (leng.equalsIgnoreCase("english")){
@@ -24,5 +24,20 @@ public class IdiomaController {
         }else{
             return "redirect:/english.html";
         }
+        */
+
+        switch (leng.toLowerCase()) {
+            case "english":
+                return "redirect:/english.html";
+            case "spanish":
+                return "redirect:/spanish.html";
+            case "french":
+                return "redirect:/french.html";
+            case "german":
+                return "redirect:/german.hmtl";
+            default:
+                return "redirect:/english.html";
+        }
     }
 }
+
