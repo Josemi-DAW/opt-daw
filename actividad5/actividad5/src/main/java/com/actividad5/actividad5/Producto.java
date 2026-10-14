@@ -3,7 +3,7 @@ package com.actividad5.actividad5;
 public class Producto {
     String nombre;
     Integer cantidad;
-    Float precio;
+    double precio;
 
     public Producto() {
     }
@@ -30,7 +30,7 @@ public class Producto {
         this.cantidad = cantidad;
     }
 
-    public Float getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 

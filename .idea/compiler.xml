@@ -6,9 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="actividad6" />
+        <module name="actividad5" />
         <module name="actividad4" />
         <module name="lenguajes" />
-        <module name="actividad5" />
       </profile>
     </annotationProcessing>
   </component>
@@ -16,6 +17,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="actividad4" options="-parameters" />
       <module name="actividad5" options="-parameters" />
+      <module name="actividad6" options="-parameters" />
       <module name="lenguajes" options="-parameters" />
     </option>
   </component>

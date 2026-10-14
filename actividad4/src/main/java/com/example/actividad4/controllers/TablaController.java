@@ -11,8 +11,8 @@ public class TablaController {
     public String tabla(@RequestParam(name = "filas", required = false) String filas,
                         @RequestParam(name = "columnas", required = false) String columnas) {
 
-        int numFilas = 1;
-        int numColumnas = 1;
+        Integer numFilas = 1;
+        Integer numColumnas = 1;
 
         try {
             if (filas != null) {

@@ -2,6 +2,7 @@ package com.actividad5.actividad5.controller;
 
 import com.actividad5.actividad5.Pedido;
 import com.actividad5.actividad5.Producto;
+import com.actividad5.actividad5.Respuesta;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +11,27 @@ import org.springframework.web.bind.annotation.RestController;
 public class PedidoController {
 
     @PostMapping("/pedido")
+    public Respuesta Respuesta(@RequestBody Pedido pedido) {
+        int numProductos = 0;
+        double precioProductos = 0.0;
+        for (Producto p : pedido.getProductos()){
+            numProductos += p.getCantidad();
+            precioProductos += p.getCantidad() * p.getPrecio();
+        }
+
+        Respuesta respuesta = new Respuesta (
+                pedido.getCliente().getNombre(),
+                numProductos,
+                precioProductos,
+                "Pedido recibido correctamente");
+
+        return respuesta;
+    }
+
+
+
+
+   /* @PostMapping("/pedido")
     public String Pedido(@RequestBody Pedido pedido){
         Integer numProductos = 0;
         double precioProductos = 0.0;
@@ -23,7 +45,6 @@ public class PedidoController {
                 "\"cliente\": " + "\"" + pedido.getCliente().getNombre() + "\"" +
                 "\n\"totalProductos\": " + numProductos + ",\n\"precioTotal\": " + precioProductos + ",\n\"mensaje\": \"Pedido recibido correctamente\"" + "\n}";
 
-
         /* Se supone que así se haría correctamente (cortesía de la IA):
 
         Map<String, Object> respuesta = new LinkedHashMap<>();
@@ -33,7 +54,7 @@ public class PedidoController {
         respuesta.put("precioTotal", precioProductos);
         respuesta.put("mensaje", "Pedido recibido correctamente");
 
-        return respuesta; */
+        return respuesta;
 
-    }
+    }*/
 }
