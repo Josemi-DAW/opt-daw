@@ -9,12 +9,14 @@
         <module name="actividad6" />
         <module name="actividad5" />
         <module name="actividad4" />
+        <module name="Actividad6" />
         <module name="lenguajes" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Actividad6" options="-parameters" />
       <module name="actividad4" options="-parameters" />
       <module name="actividad5" options="-parameters" />
       <module name="actividad6" options="-parameters" />
